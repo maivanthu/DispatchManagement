@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F0FEC83C1E559491003F884F"
-               BuildableName = "DispatchManagement.app"
-               BlueprintName = "DispatchManagement"
-               ReferencedContainer = "container:DispatchManagement.xcodeproj">
+               BuildableName = "MasterDocs.app"
+               BlueprintName = "MasterDocs"
+               ReferencedContainer = "container:MasterDocs.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F0FEC8501E559491003F884F"
-               BuildableName = "DispatchManagementTests.xctest"
-               BlueprintName = "DispatchManagementTests"
-               ReferencedContainer = "container:DispatchManagement.xcodeproj">
+               BuildableName = "MasterDocsTests.xctest"
+               BlueprintName = "MasterDocsTests"
+               ReferencedContainer = "container:MasterDocs.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F0FEC85B1E559491003F884F"
-               BuildableName = "DispatchManagementUITests.xctest"
-               BlueprintName = "DispatchManagementUITests"
-               ReferencedContainer = "container:DispatchManagement.xcodeproj">
+               BuildableName = "MasterDocsUITests.xctest"
+               BlueprintName = "MasterDocsUITests"
+               ReferencedContainer = "container:MasterDocs.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F0FEC83C1E559491003F884F"
-            BuildableName = "DispatchManagement.app"
-            BlueprintName = "DispatchManagement"
-            ReferencedContainer = "container:DispatchManagement.xcodeproj">
+            BuildableName = "MasterDocs.app"
+            BlueprintName = "MasterDocs"
+            ReferencedContainer = "container:MasterDocs.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F0FEC83C1E559491003F884F"
-            BuildableName = "DispatchManagement.app"
-            BlueprintName = "DispatchManagement"
-            ReferencedContainer = "container:DispatchManagement.xcodeproj">
+            BuildableName = "MasterDocs.app"
+            BlueprintName = "MasterDocs"
+            ReferencedContainer = "container:MasterDocs.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F0FEC83C1E559491003F884F"
-            BuildableName = "DispatchManagement.app"
-            BlueprintName = "DispatchManagement"
-            ReferencedContainer = "container:DispatchManagement.xcodeproj">
+            BuildableName = "MasterDocs.app"
+            BlueprintName = "MasterDocs"
+            ReferencedContainer = "container:MasterDocs.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

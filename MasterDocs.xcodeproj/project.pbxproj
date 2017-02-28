@@ -8,7 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		F003A28E1E5DF84800EC63FB /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F003A28D1E5DF84800EC63FB /* AdminViewController.swift */; };
+		F00A00AA1E64067B00BFA9AC /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00A00A91E64067B00BFA9AC /* SkyFloatingLabelTextField.swift */; };
+		F00A00AC1E6406B100BFA9AC /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00A00AB1E6406B100BFA9AC /* UITextField+fixCaretPosition.swift */; };
 		F00F69E41E5D67BC00D516BC /* ChitietViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00F69E31E5D67BC00D516BC /* ChitietViewController.swift */; };
+		F0472C991E616D49005A3141 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0472C981E616D49005A3141 /* Reachability.swift */; };
+		F0472CA01E618166005A3141 /* DLDemoMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0472C9A1E618166005A3141 /* DLDemoMenuViewController.swift */; };
+		F0472CA11E618166005A3141 /* DLDemoMainContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0472C9B1E618166005A3141 /* DLDemoMainContentViewController.swift */; };
+		F0472CA21E618166005A3141 /* DLDemoRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0472C9C1E618166005A3141 /* DLDemoRootViewController.swift */; };
+		F0472CA31E618166005A3141 /* DLHamburguerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0472C9D1E618166005A3141 /* DLHamburguerViewController.swift */; };
+		F0472CA41E618166005A3141 /* DLHamburguerContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0472C9E1E618166005A3141 /* DLHamburguerContainerViewController.swift */; };
+		F0472CA51E618166005A3141 /* DLHamburguerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0472C9F1E618166005A3141 /* DLHamburguerNavigationController.swift */; };
+		F0472CA91E618379005A3141 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0472CA81E618379005A3141 /* SWRevealViewController.m */; };
+		F0893E061E63C9D2007155A6 /* listCVTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0893E051E63C9D2007155A6 /* listCVTableViewController.swift */; };
 		F0E2D1CE1E5D3E57004A94A2 /* AdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E2D1CD1E5D3E57004A94A2 /* AdminTableViewController.swift */; };
 		F0FEC8411E559491003F884F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEC8401E559491003F884F /* AppDelegate.swift */; };
 		F0FEC8431E559491003F884F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEC8421E559491003F884F /* ViewController.swift */; };
@@ -17,7 +28,6 @@
 		F0FEC84B1E559491003F884F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0FEC8491E559491003F884F /* LaunchScreen.storyboard */; };
 		F0FEC8561E559491003F884F /* DispatchManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEC8551E559491003F884F /* DispatchManagementTests.swift */; };
 		F0FEC8611E559491003F884F /* DispatchManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEC8601E559491003F884F /* DispatchManagementUITests.swift */; };
-		F0FEC8711E5594B6003F884F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FEC8701E5594B6003F884F /* SWRevealViewController.m */; };
 		F0FEC8731E55951A003F884F /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEC8721E55951A003F884F /* mainViewController.swift */; };
 		F0FEC8751E559525003F884F /* menuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEC8741E559525003F884F /* menuViewController.swift */; };
 		F0FEC8771E559FB0003F884F /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEC8761E559FB0003F884F /* secondViewController.swift */; };
@@ -42,24 +52,34 @@
 
 /* Begin PBXFileReference section */
 		F003A28D1E5DF84800EC63FB /* AdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		F00A00A91E64067B00BFA9AC /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
+		F00A00AB1E6406B100BFA9AC /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		F00F69E31E5D67BC00D516BC /* ChitietViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChitietViewController.swift; sourceTree = "<group>"; };
+		F0472C981E616D49005A3141 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		F0472C9A1E618166005A3141 /* DLDemoMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLDemoMenuViewController.swift; sourceTree = "<group>"; };
+		F0472C9B1E618166005A3141 /* DLDemoMainContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLDemoMainContentViewController.swift; sourceTree = "<group>"; };
+		F0472C9C1E618166005A3141 /* DLDemoRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLDemoRootViewController.swift; sourceTree = "<group>"; };
+		F0472C9D1E618166005A3141 /* DLHamburguerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLHamburguerViewController.swift; sourceTree = "<group>"; };
+		F0472C9E1E618166005A3141 /* DLHamburguerContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLHamburguerContainerViewController.swift; sourceTree = "<group>"; };
+		F0472C9F1E618166005A3141 /* DLHamburguerNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLHamburguerNavigationController.swift; sourceTree = "<group>"; };
+		F0472CA61E618359005A3141 /* DispatchManagement-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DispatchManagement-Bridging-Header.h"; sourceTree = "<group>"; };
+		F0472CA71E618379005A3141 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		F0472CA81E618379005A3141 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		F0893E051E63C9D2007155A6 /* listCVTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listCVTableViewController.swift; sourceTree = "<group>"; };
 		F0E2D1CD1E5D3E57004A94A2 /* AdminTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminTableViewController.swift; sourceTree = "<group>"; };
-		F0FEC83D1E559491003F884F /* DispatchManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DispatchManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0FEC83D1E559491003F884F /* MasterDocs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterDocs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FEC8401E559491003F884F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0FEC8421E559491003F884F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F0FEC8451E559491003F884F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0FEC8471E559491003F884F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0FEC84A1E559491003F884F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0FEC84C1E559491003F884F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0FEC8511E559491003F884F /* DispatchManagementTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DispatchManagementTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0FEC8511E559491003F884F /* MasterDocsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterDocsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FEC8551E559491003F884F /* DispatchManagementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchManagementTests.swift; sourceTree = "<group>"; };
 		F0FEC8571E559491003F884F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0FEC85C1E559491003F884F /* DispatchManagementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DispatchManagementUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0FEC85C1E559491003F884F /* MasterDocsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterDocsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FEC8601E559491003F884F /* DispatchManagementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchManagementUITests.swift; sourceTree = "<group>"; };
 		F0FEC8621E559491003F884F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0FEC86E1E5594B5003F884F /* DispatchManagement-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DispatchManagement-Bridging-Header.h"; sourceTree = "<group>"; };
-		F0FEC86F1E5594B6003F884F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		F0FEC8701E5594B6003F884F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		F0FEC8721E55951A003F884F /* mainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 		F0FEC8741E559525003F884F /* menuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuViewController.swift; sourceTree = "<group>"; };
 		F0FEC8761E559FB0003F884F /* secondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +110,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F00A00AD1E640F2700BFA9AC /* SkyFloatingLabelTextField */ = {
+			isa = PBXGroup;
+			children = (
+				F00A00A91E64067B00BFA9AC /* SkyFloatingLabelTextField.swift */,
+				F00A00AB1E6406B100BFA9AC /* UITextField+fixCaretPosition.swift */,
+			);
+			name = SkyFloatingLabelTextField;
+			sourceTree = "<group>";
+		};
+		F0472CAA1E618918005A3141 /* DLDemoMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				F0472C9A1E618166005A3141 /* DLDemoMenuViewController.swift */,
+				F0472C9B1E618166005A3141 /* DLDemoMainContentViewController.swift */,
+				F0472C9C1E618166005A3141 /* DLDemoRootViewController.swift */,
+				F0472C9D1E618166005A3141 /* DLHamburguerViewController.swift */,
+				F0472C9E1E618166005A3141 /* DLHamburguerContainerViewController.swift */,
+				F0472C9F1E618166005A3141 /* DLHamburguerNavigationController.swift */,
+			);
+			name = DLDemoMenuController;
+			sourceTree = "<group>";
+		};
+		F0893E041E63C989007155A6 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F0472CA61E618359005A3141 /* DispatchManagement-Bridging-Header.h */,
+				F0472CA71E618379005A3141 /* SWRevealViewController.h */,
+				F0472CA81E618379005A3141 /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		F0FEC8341E559491003F884F = {
 			isa = PBXGroup;
 			children = (
@@ -103,9 +155,9 @@
 		F0FEC83E1E559491003F884F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F0FEC83D1E559491003F884F /* DispatchManagement.app */,
-				F0FEC8511E559491003F884F /* DispatchManagementTests.xctest */,
-				F0FEC85C1E559491003F884F /* DispatchManagementUITests.xctest */,
+				F0FEC83D1E559491003F884F /* MasterDocs.app */,
+				F0FEC8511E559491003F884F /* MasterDocsTests.xctest */,
+				F0FEC85C1E559491003F884F /* MasterDocsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,21 +165,23 @@
 		F0FEC83F1E559491003F884F /* DispatchManagement */ = {
 			isa = PBXGroup;
 			children = (
-				F0FEC86F1E5594B6003F884F /* SWRevealViewController.h */,
-				F0FEC8701E5594B6003F884F /* SWRevealViewController.m */,
+				F00A00AD1E640F2700BFA9AC /* SkyFloatingLabelTextField */,
+				F0893E041E63C989007155A6 /* SWRevealViewController */,
+				F0472CAA1E618918005A3141 /* DLDemoMenuController */,
+				F0472C981E616D49005A3141 /* Reachability.swift */,
 				F0FEC8401E559491003F884F /* AppDelegate.swift */,
 				F0FEC8421E559491003F884F /* ViewController.swift */,
 				F0FEC8441E559491003F884F /* Main.storyboard */,
 				F0FEC8471E559491003F884F /* Assets.xcassets */,
 				F0FEC8491E559491003F884F /* LaunchScreen.storyboard */,
 				F0FEC84C1E559491003F884F /* Info.plist */,
-				F0FEC86E1E5594B5003F884F /* DispatchManagement-Bridging-Header.h */,
 				F0FEC8721E55951A003F884F /* mainViewController.swift */,
 				F0FEC8741E559525003F884F /* menuViewController.swift */,
 				F0FEC8761E559FB0003F884F /* secondViewController.swift */,
 				F0E2D1CD1E5D3E57004A94A2 /* AdminTableViewController.swift */,
 				F00F69E31E5D67BC00D516BC /* ChitietViewController.swift */,
 				F003A28D1E5DF84800EC63FB /* AdminViewController.swift */,
+				F0893E051E63C9D2007155A6 /* listCVTableViewController.swift */,
 			);
 			path = DispatchManagement;
 			sourceTree = "<group>";
@@ -153,9 +207,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F0FEC83C1E559491003F884F /* DispatchManagement */ = {
+		F0FEC83C1E559491003F884F /* MasterDocs */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F0FEC8651E559491003F884F /* Build configuration list for PBXNativeTarget "DispatchManagement" */;
+			buildConfigurationList = F0FEC8651E559491003F884F /* Build configuration list for PBXNativeTarget "MasterDocs" */;
 			buildPhases = (
 				F0FEC8391E559491003F884F /* Sources */,
 				F0FEC83A1E559491003F884F /* Frameworks */,
@@ -165,14 +219,14 @@
 			);
 			dependencies = (
 			);
-			name = DispatchManagement;
+			name = MasterDocs;
 			productName = DispatchManagement;
-			productReference = F0FEC83D1E559491003F884F /* DispatchManagement.app */;
+			productReference = F0FEC83D1E559491003F884F /* MasterDocs.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F0FEC8501E559491003F884F /* DispatchManagementTests */ = {
+		F0FEC8501E559491003F884F /* MasterDocsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F0FEC8681E559491003F884F /* Build configuration list for PBXNativeTarget "DispatchManagementTests" */;
+			buildConfigurationList = F0FEC8681E559491003F884F /* Build configuration list for PBXNativeTarget "MasterDocsTests" */;
 			buildPhases = (
 				F0FEC84D1E559491003F884F /* Sources */,
 				F0FEC84E1E559491003F884F /* Frameworks */,
@@ -183,14 +237,14 @@
 			dependencies = (
 				F0FEC8531E559491003F884F /* PBXTargetDependency */,
 			);
-			name = DispatchManagementTests;
+			name = MasterDocsTests;
 			productName = DispatchManagementTests;
-			productReference = F0FEC8511E559491003F884F /* DispatchManagementTests.xctest */;
+			productReference = F0FEC8511E559491003F884F /* MasterDocsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F0FEC85B1E559491003F884F /* DispatchManagementUITests */ = {
+		F0FEC85B1E559491003F884F /* MasterDocsUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F0FEC86B1E559491003F884F /* Build configuration list for PBXNativeTarget "DispatchManagementUITests" */;
+			buildConfigurationList = F0FEC86B1E559491003F884F /* Build configuration list for PBXNativeTarget "MasterDocsUITests" */;
 			buildPhases = (
 				F0FEC8581E559491003F884F /* Sources */,
 				F0FEC8591E559491003F884F /* Frameworks */,
@@ -201,9 +255,9 @@
 			dependencies = (
 				F0FEC85E1E559491003F884F /* PBXTargetDependency */,
 			);
-			name = DispatchManagementUITests;
+			name = MasterDocsUITests;
 			productName = DispatchManagementUITests;
-			productReference = F0FEC85C1E559491003F884F /* DispatchManagementUITests.xctest */;
+			productReference = F0FEC85C1E559491003F884F /* MasterDocsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -236,7 +290,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F0FEC8381E559491003F884F /* Build configuration list for PBXProject "DispatchManagement" */;
+			buildConfigurationList = F0FEC8381E559491003F884F /* Build configuration list for PBXProject "MasterDocs" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -249,9 +303,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F0FEC83C1E559491003F884F /* DispatchManagement */,
-				F0FEC8501E559491003F884F /* DispatchManagementTests */,
-				F0FEC85B1E559491003F884F /* DispatchManagementUITests */,
+				F0FEC83C1E559491003F884F /* MasterDocs */,
+				F0FEC8501E559491003F884F /* MasterDocsTests */,
+				F0FEC85B1E559491003F884F /* MasterDocsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -290,12 +344,22 @@
 			files = (
 				F003A28E1E5DF84800EC63FB /* AdminViewController.swift in Sources */,
 				F0FEC8431E559491003F884F /* ViewController.swift in Sources */,
+				F0472CA31E618166005A3141 /* DLHamburguerViewController.swift in Sources */,
+				F0472CA01E618166005A3141 /* DLDemoMenuViewController.swift in Sources */,
 				F0FEC8411E559491003F884F /* AppDelegate.swift in Sources */,
-				F0FEC8711E5594B6003F884F /* SWRevealViewController.m in Sources */,
+				F0472CA11E618166005A3141 /* DLDemoMainContentViewController.swift in Sources */,
+				F00A00AA1E64067B00BFA9AC /* SkyFloatingLabelTextField.swift in Sources */,
+				F0472CA51E618166005A3141 /* DLHamburguerNavigationController.swift in Sources */,
+				F0893E061E63C9D2007155A6 /* listCVTableViewController.swift in Sources */,
+				F0472CA41E618166005A3141 /* DLHamburguerContainerViewController.swift in Sources */,
 				F0FEC8731E55951A003F884F /* mainViewController.swift in Sources */,
+				F0472CA21E618166005A3141 /* DLDemoRootViewController.swift in Sources */,
+				F00A00AC1E6406B100BFA9AC /* UITextField+fixCaretPosition.swift in Sources */,
 				F0FEC8771E559FB0003F884F /* secondViewController.swift in Sources */,
+				F0472CA91E618379005A3141 /* SWRevealViewController.m in Sources */,
 				F0E2D1CE1E5D3E57004A94A2 /* AdminTableViewController.swift in Sources */,
 				F0FEC8751E559525003F884F /* menuViewController.swift in Sources */,
+				F0472C991E616D49005A3141 /* Reachability.swift in Sources */,
 				F00F69E41E5D67BC00D516BC /* ChitietViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,12 +385,12 @@
 /* Begin PBXTargetDependency section */
 		F0FEC8531E559491003F884F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F0FEC83C1E559491003F884F /* DispatchManagement */;
+			target = F0FEC83C1E559491003F884F /* MasterDocs */;
 			targetProxy = F0FEC8521E559491003F884F /* PBXContainerItemProxy */;
 		};
 		F0FEC85E1E559491003F884F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F0FEC83C1E559491003F884F /* DispatchManagement */;
+			target = F0FEC83C1E559491003F884F /* MasterDocs */;
 			targetProxy = F0FEC85D1E559491003F884F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -450,7 +514,7 @@
 				DEVELOPMENT_TEAM = FQ3H72WP79;
 				INFOPLIST_FILE = DispatchManagement/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.DispatchManagement;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MasterDocs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DispatchManagement/DispatchManagement-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -466,7 +530,7 @@
 				DEVELOPMENT_TEAM = FQ3H72WP79;
 				INFOPLIST_FILE = DispatchManagement/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.DispatchManagement;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MasterDocs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DispatchManagement/DispatchManagement-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -484,7 +548,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.DispatchManagementTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DispatchManagement.app/DispatchManagement";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MasterDocs.app/MasterDocs";
 			};
 			name = Debug;
 		};
@@ -499,7 +563,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.DispatchManagementTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DispatchManagement.app/DispatchManagement";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MasterDocs.app/MasterDocs";
 			};
 			name = Release;
 		};
@@ -534,7 +598,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F0FEC8381E559491003F884F /* Build configuration list for PBXProject "DispatchManagement" */ = {
+		F0FEC8381E559491003F884F /* Build configuration list for PBXProject "MasterDocs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0FEC8631E559491003F884F /* Debug */,
@@ -543,7 +607,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F0FEC8651E559491003F884F /* Build configuration list for PBXNativeTarget "DispatchManagement" */ = {
+		F0FEC8651E559491003F884F /* Build configuration list for PBXNativeTarget "MasterDocs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0FEC8661E559491003F884F /* Debug */,
@@ -552,7 +616,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F0FEC8681E559491003F884F /* Build configuration list for PBXNativeTarget "DispatchManagementTests" */ = {
+		F0FEC8681E559491003F884F /* Build configuration list for PBXNativeTarget "MasterDocsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0FEC8691E559491003F884F /* Debug */,
@@ -561,7 +625,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F0FEC86B1E559491003F884F /* Build configuration list for PBXNativeTarget "DispatchManagementUITests" */ = {
+		F0FEC86B1E559491003F884F /* Build configuration list for PBXNativeTarget "MasterDocsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0FEC86C1E559491003F884F /* Debug */,

@@ -131,7 +131,7 @@ class secondViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         textFieldLVB.inputView = pickerLVB
         textFieldCQBH.inputView = pickerCQBH
         
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+       // self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
         
         //Do any additional setup after loading the view.

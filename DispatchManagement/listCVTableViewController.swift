@@ -1,31 +1,20 @@
 //
-//  AdminTableViewController.swift
+//  listCVTableViewController.swift
 //  DispatchManagement
 //
-//  Created by VanThu on 22/02/2017.
+//  Created by VanThu on 27/02/2017.
 //  Copyright © 2017 VanThu. All rights reserved.
 //
 
 import UIKit
 
-class AdminTableViewController: UITableViewController {
+class listCVTableViewController: UITableViewController {
 
-    var danhsachchon:[String]!
-    var thamsotruyen: UserDefaults!
-    
-    @IBOutlet weak var btnAAA: UIBarButtonItem!
+    var listCV:[String] = ["Cong van 1", "Cong van 2", "Cong Van 3", "Cong van 4", "Cong van 5", "Cong van 6"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        btnAAA.target = revealViewController()
-        btnAAA.action = #selector(SWRevealViewController.revealToggle(_:))
-        
-        danhsachchon = ["Chỉ đạo", "Chủ trì", "Phối hợp", "Theo dõi"]
-        
-        thamsotruyen = UserDefaults()
-        
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -47,7 +36,7 @@ class AdminTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return danhsachchon.count
+        return listCV.count
     }
 
     
@@ -55,11 +44,11 @@ class AdminTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = danhsachchon[indexPath.row]
-
+        cell.textLabel?.text = listCV[indexPath.row]
+        
         return cell
     }
- 
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -96,21 +85,14 @@ class AdminTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        var selectedIndex = self.tableView.indexPath(for: sender as! UITableViewCell)
-        
-        let chon:Int! = selectedIndex?.row
-        
-        thamsotruyen.set(String(chon), forKey: "dong")
-        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
- 
+    */
 
 }

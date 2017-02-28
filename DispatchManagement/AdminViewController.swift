@@ -18,8 +18,6 @@ class AdminViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        btnBack.target = revealViewController()
-        btnBack.action = #selector(SWRevealViewController.revealToggle(_:))
         
         mytableView.delegate = self
         mytableView.dataSource = self

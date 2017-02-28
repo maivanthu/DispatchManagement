@@ -15,22 +15,55 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
+    func checkReachability(){
+        if currentReachabilityStatus == .reachableViaWiFi{
+            //print("dsadas")
+        }
+        else if currentReachabilityStatus == .reachableViaWWAN{
+            //print("fdsfds")
+        }else{
+            let myAlert = "Không có kết nối Internet!"
+            isMyAlert(ismyAlert: myAlert)
+        }
+        
+    }
+    
+    
     @IBAction func btnLogin(_ sender: Any) {
+        
+        checkReachability()
         
         let username:String = txtUsername.text!
         let password:String = txtPassword.text!
         
-        if(username == "" || password == ""){
-            let myAlert = UIAlertController(title: "Thông Báo", message: "Vui lòng nhập Email và Password!", preferredStyle: UIAlertControllerStyle.alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){(ACTION) in
-                //print("Đã nhập")
-            }
+        let isEmailAddressValid = isValidEmailAddress(emailAddressString: username)
+        let isPasswordValid = isValidPassword(passwordString: password)
         
-            myAlert.addAction(okAction)
-            self.present(myAlert, animated: true, completion: nil)
+        if(username == "" && password == ""){
+            let myAlert = "Vui lòng nhập Email và Password!"
+            isMyAlert(ismyAlert: myAlert)
         }
-            //let login = storyboard?.instantiateViewController(withIdentifier: "login")
-        //present(login!, animated: true, completion: nil)
+        
+        else if username == "" {
+            let myAlert = "Vui lòng nhập Email!"
+            isMyAlert(ismyAlert: myAlert)
+        }
+        
+        else if isEmailAddressValid == false{
+            let myAlert = "Email sai định dạng!"
+            isMyAlert(ismyAlert: myAlert)
+        }
+            
+        else if password == "" {
+            let myAlert = "Vui lòng nhập Password!"
+            isMyAlert(ismyAlert: myAlert)
+        }
+        
+        else if isPasswordValid == false{
+            let myAlert = "Password yêu cầu tối thiểu 6 ký tự!"
+            isMyAlert(ismyAlert: myAlert)
+        }
+            
         else{
             
             self.activityIndicator.center = self.view.center
@@ -75,17 +108,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
                     if(status == "false"){
 
-                        let myAlert = UIAlertController(title: "Thông Báo", message: "Nhập sai Email hoặc Password!", preferredStyle: UIAlertControllerStyle.alert)
-                        
-                                               
-                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){(ACTION) in
-                            //print("Đã nhập")
-                            self.activityIndicator.stopAnimating()
-                        }
-                        
-                        
-                        myAlert.addAction(okAction)
-                        self.present(myAlert, animated: true, completion: nil)
+                        let myAlert = "Nhập sai Email hoặc Password!"
+                        self.isMyAlert(ismyAlert: myAlert)
 
                     }
                     else{
@@ -104,8 +128,55 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
         }
     }
- 
     
+    func isMyAlert(ismyAlert: String){
+        let myAlert = UIAlertController(title: "Thông Báo", message: ismyAlert, preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){(ACTION) in
+            self.activityIndicator.stopAnimating()
+        }
+        
+        myAlert.addAction(okAction)
+        self.present(myAlert, animated: true, completion: nil)
+    }
+ 
+    func isValidEmailAddress(emailAddressString: String) -> Bool{
+        var returnValue = true
+        let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
+        
+        do {
+            let regex = try NSRegularExpression(pattern: emailRegEx)
+            let nsString = emailAddressString as NSString
+            let results = regex.matches(in: emailAddressString, range: NSRange(location: 0, length: nsString.length))
+            
+            if results.count == 0{
+                returnValue = false
+            }
+        } catch let error as NSError {
+            print("invalid regex: \(error.localizedDescription)")
+            returnValue = false
+        }
+        return returnValue
+    }
+    
+    
+    func isValidPassword(passwordString: String) -> Bool{
+        var returnValue = true
+        let passwordRegEx = "[A-Z0-9a-z]{5}[A-Z0-9a-z]+"
+        
+        do {
+            let regex = try NSRegularExpression(pattern: passwordRegEx)
+            let nsString = passwordString as NSString
+            let results = regex.matches(in: passwordString, range: NSRange(location: 0, length: nsString.length))
+            
+            if results.count == 0{
+                returnValue = false
+            }
+        } catch let error as NSError {
+            print("invalid regex: \(error.localizedDescription)")
+            returnValue = false
+        }
+        return returnValue
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
