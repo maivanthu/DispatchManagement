@@ -10,7 +10,6 @@ import UIKit
 
 class AdminViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
 
-    @IBOutlet weak var btnBack: UIBarButtonItem!
     @IBOutlet weak var mytableView: UITableView!
     var danhsachchon:[String]!
     var thamsotruyen: UserDefaults!
@@ -51,10 +50,11 @@ class AdminViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomCell
         
         // Configure the cell...
-        cell.textLabel?.text = danhsachchon[indexPath.row]
+        cell.nameTitle.text = danhsachchon[indexPath.row]
+        
         
         return cell
     }

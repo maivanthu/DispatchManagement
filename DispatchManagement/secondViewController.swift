@@ -7,13 +7,63 @@
 //
 
 import UIKit
+import Alamofire
 
-class secondViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class secondViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var textFieldSVBD: UITextField!
+    @IBOutlet weak var viewScroll: UIView!
     @IBOutlet weak var textFieldLVB: UITextField!
     @IBOutlet weak var textFieldCQBH: UITextField!
+    @IBOutlet weak var textFieldNXL: UITextField!
+    @IBOutlet weak var textFieldND: UITextField!
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var output: UILabel!
     
-    //let datePicker = UIDatePicker()
+    @IBAction func `switch`(_ sender: UISwitch) {
+        
+        if sender.isOn == true{
+            output.text = "Gap"
+        }
+        else{
+            output.text = "Khong"
+        }
+        
+    }
+    @IBAction func getFile(_ sender: Any) {
+        
+        let image = UIImagePickerController()
+        image.delegate = self
+        
+        let actionSheet = UIAlertController(title: "Photo source", message: "choose a source", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "camera", style: .default, handler: {(action: UIAlertAction) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera){
+                image.sourceType = .camera
+                self.present(image, animated: true, completion: nil)
+            }else{
+                print("Camera not available")
+            }
+        }))
+        actionSheet.addAction(UIAlertAction(title: "photo libary", style: .default, handler: {(action: UIAlertAction) in
+            image.sourceType = .photoLibrary
+            self.present(image, animated: true, completion: nil)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "cancel", style: .default, handler: nil))
+        
+        self.present(actionSheet, animated: true, completion: nil)
+        
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let img = info[UIImagePickerControllerOriginalImage] as! UIImage
+        imgView.image = img
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
     
     @IBOutlet weak var textFieldNBH: UITextField!
     @IBAction func textFieldNBHEditing(_ sender: UITextField) {
@@ -50,12 +100,14 @@ class secondViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     
     var LVB = ["Van Ban 1", "Van Ban 2", "Van Ban 3"]
     var CQBH = ["Co quan 1", "Co quan 2", "Co quan 3"]
+    var NXL = ["Nguyen A", "Nguyen B", "Nguyen C"]
     var pickerLVB = UIPickerView()
     var pickerCQBH = UIPickerView()
+    var pickerNXL = UIPickerView()
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+        self.viewScroll.endEditing(true)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -66,6 +118,8 @@ class secondViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         var countRows : Int = LVB.count
         if pickerView == pickerCQBH{
             countRows = CQBH.count
+        } else if pickerView == pickerNXL{
+            countRows = NXL.count
         }
         
         return countRows
@@ -78,6 +132,9 @@ class secondViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         else if pickerView == pickerCQBH{
             return CQBH[row]
         }
+        else if pickerView == pickerNXL{
+            return NXL[row]
+        }
         return ""
     }
     
@@ -85,8 +142,11 @@ class secondViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         if pickerView == pickerLVB{
             textFieldLVB.text = LVB[row]
         }
-        if pickerView == pickerCQBH{
+        else if pickerView == pickerCQBH{
             textFieldCQBH.text = CQBH[row]
+        }
+        else{
+            textFieldNXL.text = NXL[row]
         }
     }
     
@@ -127,13 +187,147 @@ class secondViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         pickerLVB.dataSource = self
         pickerCQBH.delegate = self
         pickerCQBH.dataSource = self
+        pickerNXL.delegate = self
+        pickerNXL.dataSource = self
+        textFieldND.delegate = self
+        textFieldNBH.delegate = self
+        textFieldNNVB.delegate = self
+        textFieldSVBD.delegate = self
         
         textFieldLVB.inputView = pickerLVB
         textFieldCQBH.inputView = pickerCQBH
+        textFieldNXL.inputView = pickerNXL
         
-       // self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
-        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(secondViewController.dismissKeyboard)))
         //Do any additional setup after loading the view.
     }
+    
+    func dismissKeyboard(){
+        textFieldLVB.resignFirstResponder()
+        textFieldCQBH.resignFirstResponder()
+        textFieldNXL.resignFirstResponder()
+        textFieldND.resignFirstResponder()
+        textFieldNBH.resignFirstResponder()
+        textFieldNNVB.resignFirstResponder()
+        textFieldSVBD.resignFirstResponder()
+    }
+    
+    @IBAction func btnChuyenXuLy(_ sender: Any) {
+        
+        
+        myImageUploadRequest()
+        
+        
+    }
+    
+    
+    func myImageUploadRequest()
+    {
+        
+        let myUrl = NSURL(string: "https://masterdocs.herokuapp.com/api/document")
+        
+        let request = NSMutableURLRequest(url:myUrl! as URL);
+        request.httpMethod = "POST";
+        
+        let param = [
+            "SoVanBan"  : textFieldSVBD.text!,
+            "LoaiVanBan"    : textFieldLVB.text!,
+            "NgayBanHanh"    : textFieldNBH.text!,
+            "CoQuanBanHanh" :   textFieldCQBH.text!,
+            "NgayNhanVanBan" :  textFieldNNVB.text!,
+            "TrichYeu"  :   textFieldND.text!,
+            "Gap"   :   output.text!,
+            "NguoiXuLy" :   textFieldNXL.text!
+        ]
+        
+        let boundary = generateBoundaryString()
+        
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        
+        
+        let imageData = UIImageJPEGRepresentation(imgView.image!, 1)
+        
+        if(imageData==nil)  { return; }
+        
+        request.httpBody = createBodyWithParameters(parameters: param, filePathKey: "FileDinhKem", imageDataKey: imageData! as NSData, boundary: boundary) as Data
+        
+        
+        //myActivityIndicator.startAnimating();
+        
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {
+            data, response, error in
+            
+            if error != nil {
+                print("error=\(error)")
+                return
+            }
+            
+            // You can print out response object
+            print("******* response = \(response)")
+            
+            // Print out reponse body
+            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            print("****** response data = \(responseString!)")
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary
+                
+                print(json as Any)
+                
+                
+                
+            }catch
+            {
+                print(error)
+            }
+            
+        }
+        
+        task.resume()
+    }
+    
+    
+    func createBodyWithParameters(parameters: [String: String]?, filePathKey: String?, imageDataKey: NSData, boundary: String) -> NSData {
+        let body = NSMutableData();
+        
+        if parameters != nil {
+            for (key, value) in parameters! {
+                body.appendString(string: "--\(boundary)\r\n")
+                body.appendString(string: "Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
+                body.appendString(string: "\(value)\r\n")
+            }
+        }
+        
+        let filename = "user-profile.png"
+        let mimetype = "image/png"
+        
+        body.appendString(string: "--\(boundary)\r\n")
+        body.appendString(string: "Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\"\(filename)\"\r\n")
+        body.appendString(string: "Content-Type: \(mimetype)\r\n\r\n")
+        body.append(imageDataKey as Data)
+        body.appendString(string: "\r\n")
+        
+        
+        
+        body.appendString(string: "--\(boundary)--\r\n")
+        
+        return body
+    }
+    
+    
+    
+    func generateBoundaryString() -> String {
+        return "Boundary-\(NSUUID().uuidString)"
+    }
+    
+    
 }
+    extension NSMutableData {
+    
+        func appendString(string: String) {
+            let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)
+            append(data!)
+        }
+}
+

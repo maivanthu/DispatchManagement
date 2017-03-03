@@ -142,7 +142,8 @@ open class SkyFloatingLabelTextField: UITextField {
     The default implementation converts the text to uppercase.
     */
     open var titleFormatter:((String) -> String) = { (text:String) -> String in
-        return text.uppercased()
+        return text
+            //.uppercased()
     }
 
     /**
@@ -284,7 +285,7 @@ open class SkyFloatingLabelTextField: UITextField {
     fileprivate func createTitleLabel() {
         let titleLabel = UILabel()
         titleLabel.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        titleLabel.font = UIFont.systemFont(ofSize: 10)
+        titleLabel.font = UIFont.systemFont(ofSize: 12)
         titleLabel.alpha = 0.0
         titleLabel.textColor = self.titleColor
         self.addSubview(titleLabel)
