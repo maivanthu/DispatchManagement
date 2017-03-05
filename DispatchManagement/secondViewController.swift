@@ -20,7 +20,9 @@ class secondViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var output: UILabel!
     
+
     @IBAction func `switch`(_ sender: UISwitch) {
+        
         
         if sender.isOn == true{
             output.text = "Gap"
@@ -30,6 +32,7 @@ class secondViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         }
         
     }
+    
     @IBAction func getFile(_ sender: Any) {
         
         let image = UIImagePickerController()
@@ -50,6 +53,8 @@ class secondViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         }))
         actionSheet.addAction(UIAlertAction(title: "cancel", style: .default, handler: nil))
         
+        
+        
         self.present(actionSheet, animated: true, completion: nil)
         
         
@@ -65,6 +70,7 @@ class secondViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         picker.dismiss(animated: true, completion: nil)
     }
     
+
     @IBOutlet weak var textFieldNBH: UITextField!
     @IBAction func textFieldNBHEditing(_ sender: UITextField) {
         let datePickerView: UIDatePicker = UIDatePicker()
@@ -100,7 +106,7 @@ class secondViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     
     var LVB = ["Van Ban 1", "Van Ban 2", "Van Ban 3"]
     var CQBH = ["Co quan 1", "Co quan 2", "Co quan 3"]
-    var NXL = ["Nguyen A", "Nguyen B", "Nguyen C"]
+    var NXL = ["Nguyen A", "Nguyen B", "Mai van Thu"]
     var pickerLVB = UIPickerView()
     var pickerCQBH = UIPickerView()
     var pickerNXL = UIPickerView()
@@ -215,15 +221,28 @@ class secondViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
     
     @IBAction func btnChuyenXuLy(_ sender: Any) {
         
-        
-        myImageUploadRequest()
+        if (textFieldSVBD.text == "" || textFieldLVB.text == "" || textFieldNBH.text == "" || textFieldCQBH.text == "" || textFieldNNVB.text == "" || textFieldND.text == "" || output.text == "" || textFieldNXL.text == "" || imgView.image == nil){
+            let myAlert = "Vui lòng nhập đầy đủ thông tin!"
+            isMyAlert(ismyAlert: myAlert)
+        }
+        else{
+            myImageUploadRequest()
+        }
         
         
     }
     
+    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
     func myImageUploadRequest()
     {
+        
+        
+        self.activityIndicator.center = self.view.center
+        self.activityIndicator.hidesWhenStopped = true
+        self.activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
+        self.view.addSubview(self.activityIndicator)
+        self.activityIndicator.startAnimating()
         
         let myUrl = NSURL(string: "https://masterdocs.herokuapp.com/api/document")
         
@@ -273,12 +292,33 @@ class secondViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary
                 
-                print(json as Any)
-                
-                
-                
-            }catch
-            {
+                //print(json as Any)
+                guard let status = json?["status"] as? String else {
+                    print("Could not get status as string from JSON")
+                    return
+                }
+                if(status == "success"){
+                    
+                    let myAlert = UIAlertController(title: "Thông Báo", message: "Tạo thành công!", preferredStyle: UIAlertControllerStyle.alert)
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){(ACTION) in
+                        self.activityIndicator.stopAnimating()
+                        
+                        self.textFieldSVBD.text = ""
+                        self.textFieldLVB.text = ""
+                        self.textFieldNBH.text = ""
+                        self.textFieldCQBH.text = ""
+                        self.textFieldNNVB.text = ""
+                        self.textFieldND.text = ""
+                        self.output.text = ""
+                        self.textFieldNXL.text = ""
+                        self.imgView.image = nil
+                        
+                    }
+                    myAlert.addAction(okAction)
+                    self.present(myAlert, animated: true, completion: nil)
+                }
+                print("Status: \(status)")
+            } catch {
                 print(error)
             }
             
@@ -321,13 +361,23 @@ class secondViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
         return "Boundary-\(NSUUID().uuidString)"
     }
     
+    func isMyAlert(ismyAlert: String){
+        let myAlert = UIAlertController(title: "Thông Báo", message: ismyAlert, preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default){(ACTION) in
+            self.activityIndicator.stopAnimating()
+        }
+        
+        myAlert.addAction(okAction)
+        self.present(myAlert, animated: true, completion: nil)
+    }
+    
     
 }
-    extension NSMutableData {
+extension NSMutableData {
     
-        func appendString(string: String) {
-            let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)
-            append(data!)
-        }
+    func appendString(string: String) {
+        let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)
+        append(data!)
+    }
 }
 

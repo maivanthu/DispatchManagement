@@ -7,19 +7,74 @@
 //
 
 import UIKit
+import Alamofire
 
 class listCVTableViewController: UITableViewController {
 
-    var listCV:[String] = ["Cong van 1", "Cong van 2", "Cong Van 3", "Cong van 4", "Cong van 5", "Cong van 6"]
+    var listCV = [[String: AnyObject]]()
+    let urlString = "https://masterdocs.herokuapp.com/api/document"
+    
+    var sovanbanArray = [String]()
+    var loaivanbanArray = [String]()
+    //var imgURLArray = [String]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        /*let url:String = "https://masterdocs.herokuapp.com/api/document"
+        let urlRequest = URL(string: url)
+        
+        URLSession.shared.dataTask(with: urlRequest!, completionHandler: {
+        (data, response, error) in
+            if(error != nil){
+                print(error.debugDescription)
+            }else{
+                do{
+                    self.listCV = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [[String: AnyObject]]
+                    
+                        self.tableView.reloadData()
+                    
+                }catch let error as NSError{
+                    print(error)
+                }
+            }
+            
+        }).resume()*/
+        self.dowloadJsonwithURL()
+        
+    }
+    
+   
+    func dowloadJsonwithURL(){
+        let url = NSURL(string: urlString)
+        URLSession.shared.dataTask(with: (url as? URL)!, completionHandler: {(data, response, error) -> Void in
+            
+            if let jsonObj = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? NSDictionary {
+                //print(jsonObj!.value(forKey: "msg"))
+                
+                if let dispatchArray = jsonObj!.value(forKey: "msg") as? NSArray {
+                    for dispatch in dispatchArray{
+                        if let dispatchDict = dispatch as? NSDictionary {
+                            if let name = dispatchDict.value(forKey: "SoVanBan") {
+                                self.sovanbanArray.append(name as! String)
+                            }
+                            if let name = dispatchDict.value(forKey: "LoaiVanBan") {
+                                self.loaivanbanArray.append(name as! String)
+                            }
+                            //if let name = dispatchDict.value(forKey: "image") {
+                              //  self.imgURLArray.append(name as! String)
+                            //}
+                            
+                        }
+                    }
+                }
+                
+                OperationQueue.main.addOperation({
+                    self.tableView.reloadData()
+                })
+            }
+        }).resume()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +91,7 @@ class listCVTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return listCV.count
+        return self.listCV.count
     }
 
     
@@ -44,7 +99,9 @@ class listCVTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = listCV[indexPath.row]
+        let item = self.listCV[indexPath.row]
+        
+        cell.textLabel?.text = item["SoVanBan"] as? String
         
         return cell
     }

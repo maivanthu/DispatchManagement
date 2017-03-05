@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         else if currentReachabilityStatus == .reachableViaWWAN{
             //print("fdsfds")
         }else{
-            let myAlert = "Không có kết nối Internet!"
+            let myAlert = "Vui lòng kiểm tra kết nối Internet!"
             isMyAlert(ismyAlert: myAlert)
         }
         

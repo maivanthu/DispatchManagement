@@ -31,6 +31,9 @@
 		F01449B31E6869BF006D5676 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014494A1E6869BF006D5676 /* TaskDelegate.swift */; };
 		F01449B41E6869BF006D5676 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014494B1E6869BF006D5676 /* Timeline.swift */; };
 		F01449B51E6869BF006D5676 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F014494C1E6869BF006D5676 /* Validation.swift */; };
+		F025DB021E69BA6400416EBC /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = F025DB011E69BA6400416EBC /* Slide.xib */; };
+		F025DB041E69BA9C00416EBC /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025DB031E69BA9C00416EBC /* Slide.swift */; };
+		F025DB061E69BBAE00416EBC /* ListDSCVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025DB051E69BBAE00416EBC /* ListDSCVViewController.swift */; };
 		F0472C991E616D49005A3141 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0472C981E616D49005A3141 /* Reachability.swift */; };
 		F0472CA01E618166005A3141 /* DLDemoMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0472C9A1E618166005A3141 /* DLDemoMenuViewController.swift */; };
 		F0472CA11E618166005A3141 /* DLDemoMainContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0472C9B1E618166005A3141 /* DLDemoMainContentViewController.swift */; };
@@ -132,6 +135,9 @@
 		F014494A1E6869BF006D5676 /* TaskDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
 		F014494B1E6869BF006D5676 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		F014494C1E6869BF006D5676 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		F025DB011E69BA6400416EBC /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		F025DB031E69BA9C00416EBC /* Slide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		F025DB051E69BBAE00416EBC /* ListDSCVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDSCVViewController.swift; sourceTree = "<group>"; };
 		F0472C981E616D49005A3141 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		F0472C9A1E618166005A3141 /* DLDemoMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLDemoMenuViewController.swift; sourceTree = "<group>"; };
 		F0472C9B1E618166005A3141 /* DLDemoMainContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLDemoMainContentViewController.swift; sourceTree = "<group>"; };
@@ -264,6 +270,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F025DAFC1E69BA2A00416EBC /* ListDSCVView */ = {
+			isa = PBXGroup;
+			children = (
+				F025DB011E69BA6400416EBC /* Slide.xib */,
+				F025DB031E69BA9C00416EBC /* Slide.swift */,
+			);
+			name = ListDSCVView;
+			sourceTree = "<group>";
+		};
 		F0472CAA1E618918005A3141 /* DLDemoMenuController */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +325,7 @@
 		F0FEC83F1E559491003F884F /* DispatchManagement */ = {
 			isa = PBXGroup;
 			children = (
+				F025DAFC1E69BA2A00416EBC /* ListDSCVView */,
 				F01449171E6868E2006D5676 /* LibraryAlamofire */,
 				F00A00AD1E640F2700BFA9AC /* SkyFloatingLabelTextField */,
 				F0893E041E63C989007155A6 /* SWRevealViewController */,
@@ -324,6 +340,7 @@
 				F003A28D1E5DF84800EC63FB /* AdminViewController.swift */,
 				F0893E051E63C9D2007155A6 /* listCVTableViewController.swift */,
 				F00CE01C1E66794600B75212 /* CustomCell.swift */,
+				F025DB051E69BBAE00416EBC /* ListDSCVViewController.swift */,
 			);
 			path = DispatchManagement;
 			sourceTree = "<group>";
@@ -500,6 +517,7 @@
 				F0FEC8481E559491003F884F /* Assets.xcassets in Resources */,
 				F01449941E6869BF006D5676 /* Alamofire.xcworkspace in Resources */,
 				F0FEC8461E559491003F884F /* Main.storyboard in Resources */,
+				F025DB021E69BA6400416EBC /* Slide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +549,7 @@
 				F01449AB1E6869BF006D5676 /* ParameterEncoding.swift in Sources */,
 				F0FEC8431E559491003F884F /* ViewController.swift in Sources */,
 				F00CE01D1E66794600B75212 /* CustomCell.swift in Sources */,
+				F025DB061E69BBAE00416EBC /* ListDSCVViewController.swift in Sources */,
 				F0472CA31E618166005A3141 /* DLHamburguerViewController.swift in Sources */,
 				F01449B21E6869BF006D5676 /* SessionManager.swift in Sources */,
 				F0472CA01E618166005A3141 /* DLDemoMenuViewController.swift in Sources */,
@@ -559,6 +578,7 @@
 				F0E2D1CE1E5D3E57004A94A2 /* AdminTableViewController.swift in Sources */,
 				F01449B31E6869BF006D5676 /* TaskDelegate.swift in Sources */,
 				F0FEC8751E559525003F884F /* menuViewController.swift in Sources */,
+				F025DB041E69BA9C00416EBC /* Slide.swift in Sources */,
 				F0472C991E616D49005A3141 /* Reachability.swift in Sources */,
 				F00F69E41E5D67BC00D516BC /* ChitietViewController.swift in Sources */,
 			);
