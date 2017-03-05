@@ -41,7 +41,8 @@
 		F0472CA31E618166005A3141 /* DLHamburguerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0472C9D1E618166005A3141 /* DLHamburguerViewController.swift */; };
 		F0472CA41E618166005A3141 /* DLHamburguerContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0472C9E1E618166005A3141 /* DLHamburguerContainerViewController.swift */; };
 		F0472CA51E618166005A3141 /* DLHamburguerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0472C9F1E618166005A3141 /* DLHamburguerNavigationController.swift */; };
-		F0472CA91E618379005A3141 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0472CA81E618379005A3141 /* SWRevealViewController.m */; };
+		F04F747C1E6C45E400F8150E /* listCVTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F747B1E6C45E400F8150E /* listCVTableViewCell.swift */; };
+		F04F74821E6C51A900F8150E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04F74811E6C51A800F8150E /* DetailViewController.swift */; };
 		F0893E061E63C9D2007155A6 /* listCVTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0893E051E63C9D2007155A6 /* listCVTableViewController.swift */; };
 		F0E2D1CE1E5D3E57004A94A2 /* AdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E2D1CD1E5D3E57004A94A2 /* AdminTableViewController.swift */; };
 		F0FEC8411E559491003F884F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEC8401E559491003F884F /* AppDelegate.swift */; };
@@ -51,8 +52,6 @@
 		F0FEC84B1E559491003F884F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0FEC8491E559491003F884F /* LaunchScreen.storyboard */; };
 		F0FEC8561E559491003F884F /* DispatchManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEC8551E559491003F884F /* DispatchManagementTests.swift */; };
 		F0FEC8611E559491003F884F /* DispatchManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEC8601E559491003F884F /* DispatchManagementUITests.swift */; };
-		F0FEC8731E55951A003F884F /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEC8721E55951A003F884F /* mainViewController.swift */; };
-		F0FEC8751E559525003F884F /* menuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEC8741E559525003F884F /* menuViewController.swift */; };
 		F0FEC8771E559FB0003F884F /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FEC8761E559FB0003F884F /* secondViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -145,9 +144,9 @@
 		F0472C9D1E618166005A3141 /* DLHamburguerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLHamburguerViewController.swift; sourceTree = "<group>"; };
 		F0472C9E1E618166005A3141 /* DLHamburguerContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLHamburguerContainerViewController.swift; sourceTree = "<group>"; };
 		F0472C9F1E618166005A3141 /* DLHamburguerNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DLHamburguerNavigationController.swift; sourceTree = "<group>"; };
-		F0472CA61E618359005A3141 /* DispatchManagement-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DispatchManagement-Bridging-Header.h"; sourceTree = "<group>"; };
-		F0472CA71E618379005A3141 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		F0472CA81E618379005A3141 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		F04F747B1E6C45E400F8150E /* listCVTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listCVTableViewCell.swift; sourceTree = "<group>"; };
+		F04F74811E6C51A800F8150E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F04F748D1E6C58BF00F8150E /* DispatchManagement-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DispatchManagement-Bridging-Header.h"; sourceTree = "<group>"; };
 		F0893E051E63C9D2007155A6 /* listCVTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listCVTableViewController.swift; sourceTree = "<group>"; };
 		F0E2D1CD1E5D3E57004A94A2 /* AdminTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminTableViewController.swift; sourceTree = "<group>"; };
 		F0FEC83D1E559491003F884F /* MasterDocs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterDocs.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,8 +162,6 @@
 		F0FEC85C1E559491003F884F /* MasterDocsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterDocsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FEC8601E559491003F884F /* DispatchManagementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchManagementUITests.swift; sourceTree = "<group>"; };
 		F0FEC8621E559491003F884F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0FEC8721E55951A003F884F /* mainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
-		F0FEC8741E559525003F884F /* menuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuViewController.swift; sourceTree = "<group>"; };
 		F0FEC8761E559FB0003F884F /* secondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -260,6 +257,7 @@
 		F0144A091E687235006D5676 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F04F748D1E6C58BF00F8150E /* DispatchManagement-Bridging-Header.h */,
 				F0FEC8401E559491003F884F /* AppDelegate.swift */,
 				F0472C981E616D49005A3141 /* Reachability.swift */,
 				F0FEC8491E559491003F884F /* LaunchScreen.storyboard */,
@@ -273,6 +271,7 @@
 		F025DAFC1E69BA2A00416EBC /* ListDSCVView */ = {
 			isa = PBXGroup;
 			children = (
+				F025DB051E69BBAE00416EBC /* ListDSCVViewController.swift */,
 				F025DB011E69BA6400416EBC /* Slide.xib */,
 				F025DB031E69BA9C00416EBC /* Slide.swift */,
 			);
@@ -292,14 +291,14 @@
 			name = DLDemoMenuController;
 			sourceTree = "<group>";
 		};
-		F0893E041E63C989007155A6 /* SWRevealViewController */ = {
+		F04F74831E6C552B00F8150E /* listCVController */ = {
 			isa = PBXGroup;
 			children = (
-				F0472CA61E618359005A3141 /* DispatchManagement-Bridging-Header.h */,
-				F0472CA71E618379005A3141 /* SWRevealViewController.h */,
-				F0472CA81E618379005A3141 /* SWRevealViewController.m */,
+				F04F74811E6C51A800F8150E /* DetailViewController.swift */,
+				F0893E051E63C9D2007155A6 /* listCVTableViewController.swift */,
+				F04F747B1E6C45E400F8150E /* listCVTableViewCell.swift */,
 			);
-			name = SWRevealViewController;
+			name = listCVController;
 			sourceTree = "<group>";
 		};
 		F0FEC8341E559491003F884F = {
@@ -325,22 +324,18 @@
 		F0FEC83F1E559491003F884F /* DispatchManagement */ = {
 			isa = PBXGroup;
 			children = (
-				F025DAFC1E69BA2A00416EBC /* ListDSCVView */,
 				F01449171E6868E2006D5676 /* LibraryAlamofire */,
 				F00A00AD1E640F2700BFA9AC /* SkyFloatingLabelTextField */,
-				F0893E041E63C989007155A6 /* SWRevealViewController */,
 				F0472CAA1E618918005A3141 /* DLDemoMenuController */,
 				F0144A091E687235006D5676 /* Supporting Files */,
-				F0FEC8421E559491003F884F /* ViewController.swift */,
-				F0FEC8721E55951A003F884F /* mainViewController.swift */,
-				F0FEC8741E559525003F884F /* menuViewController.swift */,
-				F0FEC8761E559FB0003F884F /* secondViewController.swift */,
+				F025DAFC1E69BA2A00416EBC /* ListDSCVView */,
+				F04F74831E6C552B00F8150E /* listCVController */,
 				F0E2D1CD1E5D3E57004A94A2 /* AdminTableViewController.swift */,
+				F0FEC8421E559491003F884F /* ViewController.swift */,
 				F00F69E31E5D67BC00D516BC /* ChitietViewController.swift */,
+				F0FEC8761E559FB0003F884F /* secondViewController.swift */,
 				F003A28D1E5DF84800EC63FB /* AdminViewController.swift */,
-				F0893E051E63C9D2007155A6 /* listCVTableViewController.swift */,
 				F00CE01C1E66794600B75212 /* CustomCell.swift */,
-				F025DB051E69BBAE00416EBC /* ListDSCVViewController.swift */,
 			);
 			path = DispatchManagement;
 			sourceTree = "<group>";
@@ -552,6 +547,7 @@
 				F025DB061E69BBAE00416EBC /* ListDSCVViewController.swift in Sources */,
 				F0472CA31E618166005A3141 /* DLHamburguerViewController.swift in Sources */,
 				F01449B21E6869BF006D5676 /* SessionManager.swift in Sources */,
+				F04F74821E6C51A900F8150E /* DetailViewController.swift in Sources */,
 				F0472CA01E618166005A3141 /* DLDemoMenuViewController.swift in Sources */,
 				F0FEC8411E559491003F884F /* AppDelegate.swift in Sources */,
 				F0472CA11E618166005A3141 /* DLDemoMainContentViewController.swift in Sources */,
@@ -562,14 +558,13 @@
 				F01449AD1E6869BF006D5676 /* Response.swift in Sources */,
 				F0893E061E63C9D2007155A6 /* listCVTableViewController.swift in Sources */,
 				F0472CA41E618166005A3141 /* DLHamburguerContainerViewController.swift in Sources */,
+				F04F747C1E6C45E400F8150E /* listCVTableViewCell.swift in Sources */,
 				F01449A51E6869BF006D5676 /* DispatchQueue+Alamofire.swift in Sources */,
-				F0FEC8731E55951A003F884F /* mainViewController.swift in Sources */,
 				F0472CA21E618166005A3141 /* DLDemoRootViewController.swift in Sources */,
 				F00A00AC1E6406B100BFA9AC /* UITextField+fixCaretPosition.swift in Sources */,
 				F01449A81E6869BF006D5676 /* MultipartFormData.swift in Sources */,
 				F0FEC8771E559FB0003F884F /* secondViewController.swift in Sources */,
 				F01449B51E6869BF006D5676 /* Validation.swift in Sources */,
-				F0472CA91E618379005A3141 /* SWRevealViewController.m in Sources */,
 				F01449B41E6869BF006D5676 /* Timeline.swift in Sources */,
 				F01449B01E6869BF006D5676 /* ServerTrustPolicy.swift in Sources */,
 				F01449AC1E6869BF006D5676 /* Request.swift in Sources */,
@@ -577,7 +572,6 @@
 				F01449B11E6869BF006D5676 /* SessionDelegate.swift in Sources */,
 				F0E2D1CE1E5D3E57004A94A2 /* AdminTableViewController.swift in Sources */,
 				F01449B31E6869BF006D5676 /* TaskDelegate.swift in Sources */,
-				F0FEC8751E559525003F884F /* menuViewController.swift in Sources */,
 				F025DB041E69BA9C00416EBC /* Slide.swift in Sources */,
 				F0472C991E616D49005A3141 /* Reachability.swift in Sources */,
 				F00F69E41E5D67BC00D516BC /* ChitietViewController.swift in Sources */,

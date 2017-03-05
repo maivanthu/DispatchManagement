@@ -1,26 +1,26 @@
 //
-//  mainViewController.swift
-//  DispatchManagement
+//  DetailViewController.swift
+//  MasterDocs
 //
-//  Created by VanThu on 16/02/2017.
+//  Created by VanThu on 05/03/2017.
 //  Copyright © 2017 VanThu. All rights reserved.
 //
 
 import UIKit
 
-class mainViewController: UIViewController {
+class DetailViewController: UIViewController {
 
+    @IBOutlet weak var sovanbanLabel: UILabel!
+    @IBOutlet weak var loaivanbanLabel: UILabel!
     
-    
-    @IBOutlet weak var btnMenu: UIBarButtonItem!
+    //data from previous controller
+    var sovanbanString:String!
+    var loaivanbanString:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        btnMenu.target = revealViewController()
-        btnMenu.action = #selector(SWRevealViewController.revealToggle(_:))
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
 
+        self.updateUI()
         // Do any additional setup after loading the view.
     }
 
@@ -29,6 +29,10 @@ class mainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func updateUI() {
+        self.sovanbanLabel.text = sovanbanString
+        self.loaivanbanLabel.text = loaivanbanString
+    }
 
     /*
     // MARK: - Navigation

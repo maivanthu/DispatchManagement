@@ -339,8 +339,8 @@ class secondViewController: UIViewController, UITextFieldDelegate, UIPickerViewD
             }
         }
         
-        let filename = "user-profile.png"
-        let mimetype = "image/png"
+        let filename = "user-profile.jpg"
+        let mimetype = "image/jpg"
         
         body.appendString(string: "--\(boundary)\r\n")
         body.appendString(string: "Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\"\(filename)\"\r\n")

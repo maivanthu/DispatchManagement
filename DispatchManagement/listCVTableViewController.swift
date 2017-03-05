@@ -56,11 +56,11 @@ class listCVTableViewController: UITableViewController {
                 if let dispatchArray = jsonObj!.value(forKey: "msg") as? NSArray {
                     for dispatch in dispatchArray{
                         if let dispatchDict = dispatch as? NSDictionary {
-                            if let name = dispatchDict.value(forKey: "SoVanBan") {
-                                self.sovanbanArray.append(name as! String)
+                            if let sovanban = dispatchDict.value(forKey: "SoVanBan") {
+                                self.sovanbanArray.append(sovanban as! String)
                             }
-                            if let name = dispatchDict.value(forKey: "LoaiVanBan") {
-                                self.loaivanbanArray.append(name as! String)
+                            if let loaivanban = dispatchDict.value(forKey: "LoaiVanBan") {
+                                self.loaivanbanArray.append(loaivanban as! String)
                             }
                             //if let name = dispatchDict.value(forKey: "image") {
                               //  self.imgURLArray.append(name as! String)
@@ -74,6 +74,23 @@ class listCVTableViewController: UITableViewController {
                     self.tableView.reloadData()
                 })
             }
+        }).resume()
+    }
+    
+    func downloadJsonWithTask() {
+        
+        let url = NSURL(string: urlString)
+        
+        var downloadTask = URLRequest(url: (url as? URL)!, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 20)
+        
+        downloadTask.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: downloadTask, completionHandler: {(data, response, error) -> Void in
+            
+            let jsonData = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+            
+            print(jsonData)
+            
         }).resume()
     }
 
@@ -91,21 +108,28 @@ class listCVTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.listCV.count
+        return sovanbanArray.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! listCVTableViewCell
 
         // Configure the cell...
-        let item = self.listCV[indexPath.row]
-        
-        cell.textLabel?.text = item["SoVanBan"] as? String
+        cell.sovanbanLabel.text = sovanbanArray[indexPath.row]
+        cell.loaivanbanLabel.text = loaivanbanArray[indexPath.row]
         
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        vc.sovanbanString = sovanbanArray[indexPath.row]
+        vc.loaivanbanString = loaivanbanArray[indexPath.row]
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.
